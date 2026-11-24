@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+    int choice, quantity = 0;
+    float price = 0;
+    do
+    {
+        printf("\n===== INVENTORY SYSTEM =====\n");
+        printf("1. Add Stock\n");
+        printf("2. View Stock\n");
+        printf("3. Calculate Value\n");
+        printf("4. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+        switch(choice)
+        {
+            case 1:
+                printf("Enter quantity: ");
+                scanf("%d", &quantity);
+                printf("Enter price per item: ");
+                scanf("%f", &price);
+                printf("Stock added successfully!\n");
+                break;
+            case 2:
+                printf("Available Stock: %d\n", quantity);
+                printf("Price: %.2f\n", price);
+                break;
+            case 3:
+                printf("Total Value: %.2f\n",
+                       quantity * price);
+                break;
+            case 4:
+                printf("Exiting System...");
+                break;
+            default:
+                printf("Invalid choice!\n");
+            }
+             } while(choice != 4);
+    return 0;
+}
